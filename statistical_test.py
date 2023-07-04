@@ -54,8 +54,13 @@ def find_best_alg(dataset_num, plot_fig=False):
     ami_scores_dict = {}
     text += 'Adjusted Mutual Information Scores:\n'
 
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    print(f"Running statistical test on data set {dataset_num}")
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+
     # store the ami scores of the different algorithms in a dictionary
     for alg in alg_dict.values():
+        print(f"Running {alg} on data set {dataset_num}")
         ami_scores_dict[alg] = get_ami_scores(dataset_num, alg)
         # add the ami scores to the report file
         text += alg + " ~~~ ["
@@ -63,6 +68,7 @@ def find_best_alg(dataset_num, plot_fig=False):
             text += '%.6f, ' % x
         text = text[:-2]
         text += ']\n'
+        print(f"Alg {alg} on data set {dataset_num} is done!")
 
     text += "\n\n~~~~~~~\nTest No. 1 - " + alg_dict[1] + " vs " + alg_dict[2] + '\n'
 
