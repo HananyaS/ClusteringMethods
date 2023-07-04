@@ -4,7 +4,7 @@ from dbscan import dbscan_alg
 from kmeans import k_means_alg
 from spectral_clustering import spectral_clustering_alg
 from scipy.stats import ttest_ind
-import numpy as np
+import numpy as np 
 
 
 # returns a dictionary that maps 1-5 to the different clustering algorithms' names
